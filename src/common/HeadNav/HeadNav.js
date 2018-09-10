@@ -1,9 +1,9 @@
 import React,{ Component } from 'react';
 import './HeadNav.less'
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+// const SubMenu = Menu.SubMenu;
+// const MenuItemGroup = Menu.ItemGroup;
 
 export default class HeaderNav extends Component {
     state = {
