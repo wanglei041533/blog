@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./ArticleList.less";
 import { Row, Col, Icon } from "antd";
 import { Card } from "antd";
 
@@ -9,7 +8,7 @@ export default class ArticleList extends Component {
     return (
       <section style={{ margin: "20px 0" }}>
         <Card bordered={false}>
-            <div className="art-title">{this.props.title}</div>
+            <div className="art-title" style={{color:'#337ab7',fontSize:'20px',marginBottom:'20px'}}>{this.props.title}</div>
             <Row style={{ margin: "20px 0" }}>
                 <Col span={6} style={{ padding: "0 15px" }}>
                     <Icon type="calendar" theme="outlined" />

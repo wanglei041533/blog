@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ArticleList from '../../components/ArticleList/ArticleList';
+import ArticleList from '../components/ArticleList';
 
 export default class Article extends Component{
     constructor(props){
@@ -18,7 +18,7 @@ export default class Article extends Component{
     }
     render(){
         console.log(this.state.article);
-        return !this.state.article ? "loading" : <div>
+        return !this.state.article ? "" : <div>
             {this.state.article.map((item, index) => {
                 return <ArticleList key={index} title={item.title} time={item.time} author={item.author} brief={item.brief} tag={item.tag} img={item.img} view={item.view} classify={item.classify} />;
             })}

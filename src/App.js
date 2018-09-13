@@ -1,30 +1,36 @@
 import React, { Component } from 'react';
-import HeaderNav from './common/HeadNav/HeadNav';
-import Article from './containers/ArticleList/ArticleList';
-import Aside from './containers/Aside/Aside';
-import ScrollTop from './components/ScrollTop/ScrollTop';
+import HeaderNav from './common/HeadNav';
+import Article from './containers/ArticleList';
+import Aside from './containers/Aside';
+import Web from './containers/Web';
+import Php from "./containers/Php";
+import ScrollTop from './components/ScrollTop';
 import { Row, Col } from 'antd';
+import { BrowserRouter, Route} from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
 	render(){
-		return(
-			<div className="App">
-				<HeaderNav/>
-				<main>
-					<Row>
+		return (
+			<BrowserRouter>
+				<div className="App">
+					<HeaderNav/>
+					<main>
+						<Row>
 						<Col span={18}>
-							<Article/>
+							<Route exact path="/" component={Article}/>
+							<Route path="/web" component={Web} />
+							<Route path="/php" component={Php} />
 						</Col>
 						<Col span={6}>
-							<Aside/>
+							<Aside />
 						</Col>
-					</Row>
-					
-				</main>
-				<ScrollTop/>
-			</div>
-		)
+						</Row>
+					</main>
+					<ScrollTop />
+				</div>
+			</BrowserRouter>
+		);
 	}
 }
 
